@@ -1,0 +1,14 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "noEmit": true,
+    "jsx": "react-jsx",
+    "types": ["@webgpu/types", "vite/client"],
+    "paths": {
+      "@liquid-gpu/gpu": ["../../packages/gpu/src/index.ts"],
+      "@liquid-gpu/react": ["../../packages/react/src/index.ts"],
+      "@liquid-gpu/json-render": ["../../packages/json-render/src/index.ts"]
+    }
+  },
+  "include": ["src/**/*.ts", "src/**/*.tsx"]
+}

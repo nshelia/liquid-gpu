@@ -1,0 +1,46 @@
+{
+  "name": "@liquid-gpu/react",
+  "version": "0.1.0",
+  "description": "React 19 components that rebuild iOS 27 UI (Liquid Glass, navigation, sheets, lists) on @liquid-gpu/core and @liquid-gpu/gpu.",
+  "type": "module",
+  "sideEffects": false,
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "source": "./src/index.ts",
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "src",
+    "!src/**/*.test.ts"
+  ],
+  "scripts": {
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "build": "tsc -p tsconfig.build.json && node ../../scripts/fix-esm-imports.mjs dist",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "@liquid-gpu/core": "*",
+    "@liquid-gpu/gpu": "*"
+  },
+  "peerDependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@webgpu/types": "^0.1.74",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "typescript": "^5.6.0"
+  },
+  "module": "./dist/index.js"
+}

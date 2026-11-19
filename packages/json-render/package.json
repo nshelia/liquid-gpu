@@ -1,0 +1,50 @@
+{
+  "name": "@liquid-gpu/json-render",
+  "version": "0.1.0",
+  "description": "Generative UI for @liquid-gpu/react: a json-render catalog + registry that turns LLM-streamed JSON specs into iOS 27 UI.",
+  "type": "module",
+  "sideEffects": false,
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "source": "./src/index.ts",
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "src",
+    "!src/**/*.test.ts",
+    "!src/**/*.test.tsx"
+  ],
+  "scripts": {
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "build": "tsc -p tsconfig.build.json && node ../../scripts/fix-esm-imports.mjs dist",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "@json-render/core": "0.23.2",
+    "@json-render/react": "0.23.2",
+    "@liquid-gpu/react": "*",
+    "zod": "^4.3.6"
+  },
+  "peerDependencies": {
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3"
+  },
+  "devDependencies": {
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@webgpu/types": "^0.1.74",
+    "jsdom": "^25.0.1",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
+    "typescript": "^5.6.0"
+  }
+}

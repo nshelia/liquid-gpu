@@ -1,0 +1,13 @@
+node_modules/
+dist/
+coverage/
+*.tsbuildinfo
+.vite/
+.DS_Store
+*.log
+
+# Local-only
+research/
+apps/demo/test/out/
+.wrangler/
+/core.cjs

@@ -1,0 +1,7 @@
+{
+  // Static deploy of the demo: `npx vite build && npx wrangler deploy`
+  "name": "liquid-gpu-demo",
+  "compatibility_date": "2026-11-01",
+  "assets": { "directory": "./dist", "html_handling": "auto-trailing-slash", "not_found_handling": "404-page" },
+  "routes": [{ "pattern": "liquid.shelia.me", "custom_domain": true }]
+}

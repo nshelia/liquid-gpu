@@ -1,0 +1,20 @@
+{
+  "name": "liquid-gpu",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "build": "npm run build -w @liquid-gpu/core -w @liquid-gpu/gpu -w @liquid-gpu/react -w @liquid-gpu/json-render",
+    "clean": "npm run clean --workspaces --if-present"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.0",
+    "vitest": "^2.1.0"
+  }
+}
