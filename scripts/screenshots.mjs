@@ -57,6 +57,8 @@ async function shot(name, path) {
       formats: { screenshot: true },
       sharedParams: { viewport: { width: 402, height: 874 }, waitFor: Number(process.env.WAIT ?? 2500), dismissCookies: false },
       screenshotParams: { area: 'viewport', format: 'png' },
+      // Always render the live site (no cached capture).
+      maxAgeMs: 0,
     }),
   });
   const text = await res.text();
